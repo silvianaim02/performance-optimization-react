@@ -1,7 +1,7 @@
-import { memo, useCallback, useMemo, useState } from "react";
+import { memo, useCallback, useMemo, useState } from 'react';
 
 const Child = memo(function Child({ title, onClick, options, style }) {
-  console.log("render Child:", title);
+  console.log('render Child:', title);
 
   return (
     <div style={style}>
@@ -13,23 +13,23 @@ const Child = memo(function Child({ title, onClick, options, style }) {
 });
 
 export default function MemoComponent() {
-console.log('----------------')
-  console.log("render with optimiazation");
+  console.log('----------------');
+  console.log('render with optimiazation');
 
   const [count, setCount] = useState(0);
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
 
   // ✅ stabil: function tidak ganti tiap render
   const handleChildClick = useCallback(() => {
-    alert("child clicked");
+    alert('child clicked');
   }, []);
 
   // ✅ stabil: object tidak ganti tiap render
-  const options = useMemo(() => ({ size: "M", variant: "primary" }), []);
+  const options = useMemo(() => ({ size: 'M', variant: 'primary' }), []);
 
   // ✅ stabil: object style tidak ganti tiap render
   const style = useMemo(
-    () => ({ border: "1px solid #ccc", padding: 12, borderRadius: 8 }),
+    () => ({ border: '1px solid #ccc', padding: 12, borderRadius: 8 }),
     []
   );
 
@@ -43,7 +43,7 @@ console.log('----------------')
     <div style={{ padding: 16 }}>
       <h2>With Optimization using useMemo</h2>
 
-      <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+      <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
         <button onClick={() => setCount((c) => c + 1)}>count: {count}</button>
         <input
           value={text}

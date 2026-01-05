@@ -1,7 +1,7 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState } from 'react';
 
 function Child({ title, onClick, options, style }) {
-  console.log("render Child:", title);
+  console.log('render Child:', title);
 
   return (
     <div style={style}>
@@ -13,18 +13,18 @@ function Child({ title, onClick, options, style }) {
 }
 
 export default function Children() {
-console.log('----------------')
-  console.log("render Children non-optimiazation");
+  console.log('----------------');
+  console.log('render Children non-optimiazation');
 
   const [count, setCount] = useState(0);
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
 
   // ❌ tanpa useMemo:
   // - function baru setiap render
   // - object/array baru setiap render
-  const handleChildClick = () => alert("child clicked");
-  const options = { size: "M", variant: "primary" };
-  const style = { border: "1px solid #ccc", padding: 12, borderRadius: 8 };
+  const handleChildClick = () => alert('child clicked');
+  const options = { size: 'M', variant: 'primary' };
+  const style = { border: '1px solid #ccc', padding: 12, borderRadius: 8 };
 
   // Simulasi komputasi agak berat
   const expensiveValue = useMemo(() => {
@@ -37,7 +37,7 @@ console.log('----------------')
     <div style={{ padding: 16 }}>
       <h2>Without Optimization using useMemo</h2>
 
-      <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+      <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
         <button onClick={() => setCount((c) => c + 1)}>count: {count}</button>
         <input
           value={text}

@@ -9,8 +9,7 @@ function InfoBox({ title, description, points }) {
         ))}
       </ul>
     </div>
-  )
+  );
 }
 
-export default InfoBox
-
+export default InfoBox;

@@ -1,9 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import './App.css'
-import Home from './pages/Home'
-import RenderingPage from './pages/RenderingPage'
-import CodeSplittingPage from './pages/CodeSplittingPage'
-import LargeListsPage from './pages/LargeListsPage'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+import Home from './pages/Home';
+import RenderingPage from './pages/RenderingPage';
+import CodeSplittingPage from './pages/CodeSplittingPage';
+import LargeListsPage from './pages/LargeListsPage';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Route path="/large-lists" element={<LargeListsPage />} />
       </Routes>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

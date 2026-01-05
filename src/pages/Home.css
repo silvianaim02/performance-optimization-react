@@ -93,18 +93,17 @@
     background: #1a1a1a;
     border-color: #333;
   }
-  
+
   .experiment-card h2 {
     color: #fff;
   }
-  
+
   .experiment-card p {
     color: #aaa;
   }
-  
+
   .topic-tag {
     background: #2a2a2a;
     color: #aaa;
   }
 }
-

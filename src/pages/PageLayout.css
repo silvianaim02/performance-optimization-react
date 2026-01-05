@@ -154,7 +154,7 @@
   font-size: 1rem;
 }
 
-.controls input[type="checkbox"] {
+.controls input[type='checkbox'] {
   width: 18px;
   height: 18px;
   cursor: pointer;
@@ -177,7 +177,7 @@
     background: #1a1a1a;
     border-left-color: #667eea;
   }
-  
+
   .component-demo,
   .lazy-component-container,
   .controls,
@@ -185,13 +185,12 @@
     background: #1a1a1a;
     border-color: #333;
   }
-  
+
   .button-group button {
     background: #1a1a1a;
   }
-  
+
   .button-group button:hover {
     background: #667eea;
   }
 }
-
