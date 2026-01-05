@@ -1,6 +1,8 @@
 import { useState, lazy, Suspense } from 'react'
 import { Link } from 'react-router-dom'
 import './PageLayout.css'
+import PageHeader from '../components/PageHeader'
+import InfoBox from '../components/InfoBox'
 
 // Lazy load heavy components
 const HeavyComponent1 = lazy(() => import('../components/HeavyComponent1'))
@@ -10,28 +12,9 @@ const HeavyComponent3 = lazy(() => import('../components/HeavyComponent3'))
 function CodeSplittingPage() {
   const [activeComponent, setActiveComponent] = useState(null)
 
-  return (
-    <div className="page-container">
-      <nav className="page-nav">
-        <Link to="/" className="back-link">← Back to Home</Link>
-      </nav>
-      
-      <header className="page-header">
-        <h1>Code Splitting & Lazy Loading</h1>
-        <p>Load components only when needed</p>
-      </header>
-
-      <div className="content-section">
-        <div className="info-box">
-          <h3>📦 What to observe:</h3>
-          <ul>
-            <li>Open Network tab in DevTools</li>
-            <li>Click buttons below to load components on-demand</li>
-            <li>Notice separate chunk files being loaded for each component</li>
-            <li>Initial bundle size is smaller because components are loaded lazily</li>
-          </ul>
-        </div>
-
+  const renderMainContent = () => {
+    return (
+      <>
         <div className="button-group">
           <button 
             onClick={() => setActiveComponent('component1')}
@@ -67,7 +50,31 @@ function CodeSplittingPage() {
               </div>
             )}
           </Suspense>
-        </div>
+        </div></>
+    )
+  }
+
+  return (
+    <div className="page-container">
+      <nav className="page-nav">
+        <Link to="/" className="back-link">← Back to Home</Link>
+      </nav>
+      <PageHeader 
+        title="Code Splitting & Lazy Loading"
+        description="Load components only when needed"
+      />
+      <div className="content-section">
+        <InfoBox
+          title="📦 What to observe:"
+          description="Load components only when needed"
+          points={[
+            'Open Network tab in DevTools',
+            'Click buttons below to load components on-demand',
+            'Notice separate chunk files being loaded for each component',
+            'Initial bundle size is smaller because components are loaded lazily'
+          ]}
+        />
+        {renderMainContent()}
       </div>
     </div>
   )
