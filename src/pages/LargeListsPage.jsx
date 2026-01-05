@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import './PageLayout.css'
+import PageHeader from '../components/PageHeader'
 
 // Simple virtual list implementation
 function VirtualList({ items, itemHeight = 50, containerHeight = 600 }) {
@@ -60,28 +61,9 @@ function LargeListsPage() {
     }))
   }, [listSize])
 
-  return (
-    <div className="page-container">
-      <nav className="page-nav">
-        <Link to="/" className="back-link">← Back to Home</Link>
-      </nav>
-      
-      <header className="page-header">
-        <h1>Large Lists/Tables Optimization</h1>
-        <p>Efficiently render thousands of items</p>
-      </header>
-
-      <div className="content-section">
-        <div className="info-box">
-          <h3>🚀 What to observe:</h3>
-          <ul>
-            <li>Toggle between virtualized and non-virtualized rendering</li>
-            <li>Notice the performance difference with large datasets</li>
-            <li>Virtualization only renders visible items</li>
-            <li>Check React DevTools Profiler to see render times</li>
-          </ul>
-        </div>
-
+  const renderMainContent = () => {
+    return (
+      <>
         <div className="controls">
           <label>
             List Size: 
@@ -137,6 +119,32 @@ function LargeListsPage() {
             </div>
           )}
         </div>
+      </>
+    )
+  }
+
+  return (
+    <div className="page-container">
+      <nav className="page-nav">
+        <Link to="/" className="back-link">← Back to Home</Link>
+      </nav>
+      <PageHeader
+        title="Large Lists/Tables Optimization"
+        description="Efficiently render thousands of items"
+      />
+
+      <div className="content-section">
+        <InfoBox
+          title="🚀 What to observe:"
+          description="Efficiently render thousands of items"
+          points={[
+            'Toggle between virtualized and non-virtualized rendering',
+            'Notice the performance difference with large datasets',
+            'Virtualization only renders visible items',
+            'Check React DevTools Profiler to see render times'
+          ]}
+        />
+        {renderMainContent()}
       </div>
     </div>
   )
