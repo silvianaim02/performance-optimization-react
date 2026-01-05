@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import './PageLayout.css'
 import PageHeader from '../components/PageHeader'
+import InfoBox from '../components/InfoBox'
 
 // Simple virtual list implementation
 function VirtualList({ items, itemHeight = 50, containerHeight = 600 }) {
