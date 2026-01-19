@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import RenderingPage from './pages/RenderingPage';
 import CodeSplittingPage from './pages/CodeSplittingPage';
 import LargeListsPage from './pages/LargeListsPage';
+import FetchingDataPage from './pages/FetchingDataPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/rendering" element={<RenderingPage />} />
         <Route path="/code-splitting" element={<CodeSplittingPage />} />
         <Route path="/large-lists" element={<LargeListsPage />} />
+        <Route path="/fetching-data" element={<FetchingDataPage />} />
       </Routes>
     </Router>
   );

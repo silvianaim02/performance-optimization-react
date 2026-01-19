@@ -38,6 +38,17 @@ function Home() {
         'Performance monitoring',
       ],
     },
+    {
+      title: 'Fetching Data Optimization',
+      description: 'Efficiently fetch and display data',
+      path: '/fetching-data',
+      topics: [
+        'Data fetching',
+        'Caching',
+        'Pagination',
+        'Performance monitoring',
+      ],
+    },
   ];
 
   return (
